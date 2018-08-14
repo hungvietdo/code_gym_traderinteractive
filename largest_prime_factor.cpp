@@ -12,7 +12,7 @@ int main()
 	}
 	
 	std::cout << "The largest prime factor of the number 778118621513 is:" << n << "\n";
-	
+
 	return 0;
 }
 
