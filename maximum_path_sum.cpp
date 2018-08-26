@@ -16,12 +16,15 @@ int getRightBelow(int position);
 void readNumbersFromTextFile(string fileName);
 void calculateResult();
 
-TEST (generaTest, generaTest) {
+TEST (generalTest, generalTest) {
     ASSERT_THAT (1, getRow(1));
+    ASSERT_THAT (3, getRow(4));
     ASSERT_THAT (3, getRow(5));
     ASSERT_THAT (4, getRow(7));
+    ASSERT_THAT (4, getRow(8));
     ASSERT_THAT (4, getRow(10));
     ASSERT_THAT (5, getRow(11));
+    ASSERT_THAT (15, getRow(120));
 
     ASSERT_THAT (11, getLeftBelow(7));
     ASSERT_THAT (12, getRightBelow(7));
@@ -81,9 +84,9 @@ void calculateResult() {
 }
 
 int getRow(int position) {
-    int n = 1;
-    while ((n*(n+1)/2)<position) n++;
-    return n;
+    int n = floor(sqrt(2 * position));
+    if ((n*(n+1)/2) >= position) n--;
+    return n + 1;
 }
 
 int getLeftBelow(int position) {
