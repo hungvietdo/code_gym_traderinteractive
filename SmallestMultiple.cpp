@@ -3,7 +3,6 @@
 using namespace std;
 
 long long calculation(int input);
-int relativePrime;
 
 TEST(test, simpleTests) { 
     EXPECT_EQ (2520, calculation (10));
@@ -27,9 +26,8 @@ long long calculation(int input) {
     
     for (int i = 1; i <= input; i++){
        if (result % i == 0) continue;
-       relativePrime = i;
-       while (relativePrime * i <= input) relativePrime *= i;
-       result = result * relativePrime;
+       
+       result = result * pow(i, floor(log(input) / log(i)));
     }
  
     return result;
