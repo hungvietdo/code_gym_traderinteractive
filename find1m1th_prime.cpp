@@ -2,7 +2,6 @@
 #include <boost/dynamic_bitset.hpp>
 #include <cmath>
 #include <limits>
-#include <cmath>
 #include <iostream>
 
 boost::dynamic_bitset<> sieve_of_sundaram( std::size_t N )
@@ -40,6 +39,6 @@ int nth_prime_number( std::size_t n )
 
 int main()
 {
-    for( std::size_t n = 100 ; n < 1500000 ; n *= 10 )
+    for( std::size_t n = 100 ; n < 1000001 ; n *= 10 )
         std::cout << n+1 << ": " << nth_prime_number(n+1) << '\n' ;
 }
