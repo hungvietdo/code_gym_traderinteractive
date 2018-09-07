@@ -1,11 +1,14 @@
-//Sandbox link: http://cpp.sh/6w6er
-#include <vector>
+/*
+    Sandbox link: http://cpp.sh/6w6er
+    https://en.wikipedia.org/wiki/Sieve_of_Sundaram
+*/
+
 #include <boost/dynamic_bitset.hpp>
 #include <cmath>
-#include <limits>
 #include <iostream>
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
-//https://en.wikipedia.org/wiki/Sieve_of_Sundaram
 boost::dynamic_bitset<> sieve_of_sundaram(long n)
 {
     const long m = n/2 ;
@@ -39,7 +42,19 @@ int nth_prime_number( long n )
     return number ;
 }
 
-int main()
-{
-    std::cout << nth_prime_number(1000001) << '\n' ;
+/*
+    Prime:  3, 5, 7, 9, 11, 13, 17, 19, 23, 29, 31
+    Pos:    1, 2, 3, 4,  5,  6,  7,  8,  9, 10, 11
+*/
+
+TEST (primeNum, primeNum) {
+    ASSERT_THAT (17, nth_prime_number(7));
+    ASSERT_THAT (29, nth_prime_number(10));
+    ASSERT_THAT (31, nth_prime_number(11));
+    ASSERT_THAT (15485867, nth_prime_number(1000001)); //result
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
