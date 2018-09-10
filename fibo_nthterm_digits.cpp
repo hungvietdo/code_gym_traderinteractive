@@ -3,7 +3,7 @@
 
 const double phi = (1 + sqrt(5))/2;
 
-double getTermByDigits(long Digits) {
+long getTermByDigits(long Digits) {
     return ceil((Digits + log10(5)/2)/log10(phi));
 }
 
