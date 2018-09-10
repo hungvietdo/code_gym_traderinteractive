@@ -1,7 +1,5 @@
-#include <stdio.h> 
 #include <math.h> 
 #include <iostream>
-#include <string>
 
 const double phi = (1 + sqrt(5))/2;
 
