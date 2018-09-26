@@ -5,16 +5,16 @@
 std::bitset<10000000> list;
 int size = 10000000;
   
-bool isLeftTruncatable(int x) {
+bool isLeftTruncatable(long x) {
     
     do { 
         if(list[x]) return false; 
-        x = x % (int) pow(10, (int) log10(x));
+        x = x % (long) pow(10, (long) log10(x));
     } while (x>0);
 
     return true;
 }
-bool isRightTruncatable(int x) {
+bool isRightTruncatable(long x) {
     do {
         if(list[x]) return false;
         x = x / 10;
@@ -25,7 +25,6 @@ bool isRightTruncatable(int x) {
 
 int main ()
 {
-
     list.set(1,1); // 1 is not a prime number
     
     // List of primes
@@ -37,7 +36,7 @@ int main ()
 
     long long sum=0;
     int count=0;
-    int i = 10;
+    long i = 10;
     int stopCount = 11;
 
     do {
