@@ -6,7 +6,6 @@ std::bitset<10000000> list;
 int size = 10000000;
   
 bool isLeftTruncatable(long x) {
-    
     do { 
         if(list[x]) return false; 
         x = x % (long) pow(10, (long) log10(x));
